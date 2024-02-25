@@ -34,14 +34,15 @@ function exibirValoresItens() {
     const volumeTotal = volumes.reduce((acc, volume) => acc + volume, 0);
     valoresItensDiv.innerHTML += `<strong>Volume Total: ${volumeTotal.toFixed(2)} m³</strong>`;
 }
-
 function calcularCubagem() {
     const fatorCubagem = parseFloat(document.getElementById('fatorCubagem').value);
 
     if (!isNaN(fatorCubagem)) {
+        exibirValoresItens();
+
         const volumeTotal = volumes.reduce((acc, volume) => acc + volume, 0);
         const cubagem = volumeTotal * fatorCubagem;
-        document.getElementById('resultado').innerText = `Cubagem Total: ${cubagem.toFixed(2)} kg`;
+        document.getElementById('resultado-final').innerHTML = `<strong>Cubagem Total: ${cubagem.toFixed(2)} kg</strong>`;
     } else {
         alert('Selecione um fator de cubagem válido.');
     }
