@@ -1,0 +1,101 @@
+body {
+    background-color: #494848;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px; /* Largura fixa para tornar o retângulo um quadrado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao redor do quadrado */
+}
+
+.calculator-box {
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+input,
+select,
+button {
+    margin: 10px 0;
+    padding: 8px;
+    border: none;
+    width: 100%; /* Preenchimento total da largura disponível */
+}
+
+button {
+    background-color: #063861;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #063861;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.admin-image {
+    width: 100px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group {
+    flex: 1;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: transparent;
+    color: white;
+    margin-top: 5px;
+}
+.valores-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #000;
+    border: 2px solid #063861; /* Borda azul */
+    border-radius: 5px;
+    color: white;
+}
+@media (max-width: 600px) {
+    .container {
+        width: 80%; /* Largura ajustada para dispositivos móveis */
+        height: auto;
+    }
+
+    .input-row {
+        flex-direction: column; /* Empilha os grupos de entrada verticalmente */
+    }
+    .calculator-box h1 {
+        font-size: 1.5em; /* Reduz o tamanho do título em dispositivos móveis */
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 80%; /* Largura ajustada para tablets */
+    }
+}
