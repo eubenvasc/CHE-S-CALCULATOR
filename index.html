@@ -13,18 +13,18 @@
                 <h1>CHE'S CALCULATOR</h1>
                 <div class="input-row">
                     <div class="input-group">
-                        <label for="altura">Altura (m):</label>
+                        <label for="altura">Altura:</label>
                         <input type="number" id="altura" step="0.01" placeholder="Altura">
                     </div>
                     <div class="input-group">
-                        <label for="largura">Largura (m):</label>
+                        <label for="largura">Largura:</label>
                         <input type="number" id="largura" step="0.01" placeholder="Largura">
                     </div>
                 </div>
-    
+                
                 <div class="input-row">
                     <div class="input-group">
-                        <label for="profundidade">Profundidade (m):</label>
+                        <label for="profundidade">Profundidade:</label>
                         <input type="number" id="profundidade" step="0.01" placeholder="Profundidade">
                     </div>
                     <div class="input-group">
@@ -32,14 +32,22 @@
                         <input type="number" id="quantidade" placeholder="Quantidade">
                     </div>
                 </div>
+                <div class="input-group">
+                    <label for="unidade">Unidade:</label>
+                    <button onclick="alternarUnidade()">Alternar</button>
+                </div>
+                </div>
             <button onclick="adicionarItem()">Adicionar Item</button>
             <button onclick="calcularVolume()">Calcular Volume</button>
+
+            <div class="resultado-container" id="resultado-container">
+                <!-- Os volumes dos itens e o volume total serão exibidos aqui -->
+            </div>
+            
+            <div id="valores-itens-container"></div>
             <button onclick="limparCampos()">Limpar Campos</button>
 
-            <div class="valores-container">
-                <div id="valores-itens"></div>
-                <div id="resultado-final"></div>
-            </div>
+           
 
             <label for="fatorCubagem">Fator de Cubagem:</label>
             <select id="fatorCubagem">
@@ -49,11 +57,18 @@
             </select>
 
             <button onclick="calcularCubagem()">Calcular Cubagem</button>
-                        
+            
+            <div class="valores-container">
+                <div id="valores-itens"></div>
+                <div id="resultado-final"></div>
+            </div>
+
+            <a href="calculadora_quantidade.html">
             <div class="image-container">
                 <img src="adm.png" alt="Administração" class="admin-image">
             </div>
-       
+            </a>
+            
         </div>
     </div>
 </body>

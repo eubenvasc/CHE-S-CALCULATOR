@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script_calculadora_quantidade.js"></script>
+    <title>Calculadora de Quantidade</title>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+    <h1>Calculadora de Quantidade</h1>
+</div>
+
+    <!-- Caixa -->
+    <div class="calculator-box2">
+      <h2>Caixa</h2>
+      <label for="caixa-altura">Altura:</label>
+      <input type="number" id="caixa-altura" placeholder="Altura" step="0.01">
+  
+      <label for="caixa-largura">Largura:</label>
+      <input type="number" id="caixa-largura" placeholder="Largura" step="0.01">
+  
+      <label for="caixa-profundidade">Profundidade:</label>
+      <input type="number" id="caixa-profundidade" placeholder="Profundidade" step="0.01">
+  
+      <label for="unidade-caixa">Unidade:</label>
+      <select id="unidade-caixa">
+        <option value="metro">Metro</option>
+        <option value="centimetro">Centímetro</option>
+      </select>
+  
+    <!-- Container -->
+    <div>
+      <h2>Container</h2>
+      <label for="container-altura">Altura:</label>
+      <input type="number" id="container-altura" placeholder="Altura" step="0.01">
+  
+      <label for="container-largura">Largura:</label>
+      <input type="number" id="container-largura" placeholder="Largura" step="0.01">
+  
+      <label for="container-comprimento">Comprimento:</label>
+      <input type="number" id="container-comprimento" placeholder="Comprimento" step="0.01">
+  
+      <label for="unidade-container">Unidade:</label>
+      <select id="unidade-container">
+        <option value="metro">Metro</option>
+        <option value="centimetro">Centímetro</option>
+      </select>
+    </div>
+</div>
+  
+    <!-- Calcular -->
+    <button onclick="calcularQuantidade()">Calcular Quantidade</button>
+  
+    <!-- Resultado -->
+  <div id="resultado-container"></div>
+    
+    <a href="index.html">
+        <div class="image-container">
+            <img src="adm.png" alt="Administração" class="admin-image">
+        </div>
+        </a>
+  
+    <script>
+      function calcularQuantidade() {
+        // Obter valores da caixa
+        const caixaAltura = parseFloat(document.getElementById('caixa-altura').value);
+        const caixaLargura = parseFloat(document.getElementById('caixa-largura').value);
+        const caixaProfundidade = parseFloat(document.getElementById('caixa-profundidade').value);
+        const unidadeCaixa = document.getElementById('unidade-caixa').value;
+  
+        // Obter valores do container
+        const containerAltura = parseFloat(document.getElementById('container-altura').value);
+        const containerLargura = parseFloat(document.getElementById('container-largura').value);
+        const containerComprimento = parseFloat(document.getElementById('container-comprimento').value);
+        const unidadeContainer = document.getElementById('unidade-container').value;
+  
+        // Converter unidades para metros
+        const caixaVolume = calcularVolume(caixaAltura, caixaLargura, caixaProfundidade, unidadeCaixa);
+        const containerVolume = calcularVolume(containerAltura, containerLargura, containerComprimento, unidadeContainer);
+  
+        // Calcular quantidade
+        const quantidade = Math.floor(containerVolume / caixaVolume);
+  
+        // Exibir resultado
+      document.getElementById('resultado-container').innerText = `Quantidade de caixas que cabe no container: ${quantidade}`;
+    }
+
+  
+      function calcularVolume(altura, largura, profundidade, unidade) {
+        if (unidade === 'centimetro') {
+          altura /= 100;
+          largura /= 100;
+          profundidade /= 100;
+        }
+        return altura * largura * profundidade;
+      }
+    </script>
+    </div>
+
+</body>
+<!-- <script src="script.js"></script> -->
+</html>

@@ -11,15 +11,35 @@ body {
     background-color: #000;
     padding: 20px;
     border-radius: 10px;
+    height: auto;
     width: 500px; /* Largura fixa para tornar o retângulo um quadrado */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao redor do quadrado */
 }
-
 .calculator-box {
-    color: white;
+    color: #063861;
     text-align: center;
     position: relative;
 }
+.calculator-box2 {
+    margin-top: 50%;
+    color: #063861;
+    text-align: center;
+    position: relative;
+    padding-top: 0;
+    label, input, select {
+        margin-bottom: 5px; /* ou qualquer valor desejado */
+      }
+      
+      h2 {
+        margin-top: 10px; /* ou qualquer valor desejado */
+      }
+      
+      button {
+        margin-top: 10px; /* ou qualquer valor desejado */
+      }
+}
+
+
 
 input,
 select,
@@ -81,6 +101,49 @@ input {
     border-radius: 5px;
     color: white;
 }
+.resultado-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #000;
+    border: 2px solid #063861; /* Borda azul */
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+.calculator-box h1, h2 {
+    margin-top: 20%;
+    font-size: 2em;
+    color: white;
+}
+.calculator-box2 h1, h2 {
+    margin-top: 20%;
+    font-size: 2em;
+    color: white;
+}
+select,
+button {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: black;
+    border: 1px solid white; /* Adiciona borda branca */
+    color: white; /* Define a cor do texto como branca */
+    width: 100%;
+}
+#resultado-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid #063861;
+    border-radius: 5px;
+  }
+.titulo{
+    color: antiquewhite;
+}
+
+
+
+
 @media (max-width: 600px) {
     .container {
         width: 80%; /* Largura ajustada para dispositivos móveis */
