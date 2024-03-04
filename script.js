@@ -72,6 +72,7 @@ function exibirVolumes() {
         resultadoDiv.innerHTML += `Item ${index + 1}: ${volume.toFixed(2)} m³<br>`;
     });
 }
+<<<<<<< HEAD
 // ... (código anterior) ...
 
 function calcularVolume() {
@@ -154,3 +155,5 @@ function calcularVolume() {
         alert('Preencha todos os campos com valores numéricos.');
     }
 }
+=======
+>>>>>>> 4bd7ef64b39769e65b42324514a79dacd8809006
